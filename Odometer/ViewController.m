@@ -113,7 +113,7 @@
         self.unitLabel.text = self.chosenUnit;
     }];
     
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Never mind" style:UIAlertActionStyleDestructive handler:nil];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Never mind" style:UIAlertActionStyleCancel handler:nil];
     
     UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Change unit of measuring into..." message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     [controller addAction:action1];
