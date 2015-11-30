@@ -11,7 +11,10 @@
 
 @interface ViewController () <CLLocationManagerDelegate>
 
-@property (strong, nonatomic) IBOutlet UILabel *textlabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (strong, nonatomic) IBOutlet UILabel *unitLabel;
+
 @property (strong, nonatomic) CLLocationManager *manager;
 @property (strong, nonatomic) CLLocation *previousLocation;
 
@@ -21,7 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.textlabel.text = nil;
+    self.distanceLabel.text = @"0.00";
+    // self.unitLabel.text = nil;
     
     // beg for location usage
     [self.manager requestAlwaysAuthorization];
@@ -57,7 +61,7 @@
 
 - (void)startOdometer {
     
-    self.textlabel.text = @"Measuring...";
+    self.distanceLabel.text = @"0.00";
     
     // start location manager
     [self.manager startUpdatingLocation];
@@ -66,7 +70,7 @@
 
 - (void)stopOdometer {
     
-    self.textlabel.text = @"Stopped";
+    self.distanceLabel.text = @"0.00";
     
     // stop location manager
     [self.manager stopUpdatingLocation];
@@ -105,11 +109,12 @@
     
     // update label
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
-    formatter.maximumFractionDigits = 0;
+    formatter.minimumFractionDigits = 2;
+    formatter.maximumFractionDigits = 2;
     formatter.minimumIntegerDigits = 1;
     
-    NSString *distanceText = [NSString stringWithFormat:@"%@ k/ph", [formatter stringFromNumber:[NSNumber numberWithFloat:distance]]];
-    self.textlabel.text = distanceText;
+    NSString *distanceText = [formatter stringFromNumber:[NSNumber numberWithFloat:distance]];
+    self.distanceLabel.text = distanceText;
     
     // store current location as previous
     self.previousLocation = currentLocation;
