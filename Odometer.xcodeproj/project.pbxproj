@@ -15,6 +15,7 @@
 		D2E7B4671C0CFF4000D44836 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E7B4651C0CFF4000D44836 /* LaunchScreen.storyboard */; };
 		D2E7B4721C0CFF4000D44836 /* OdometerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E7B4711C0CFF4000D44836 /* OdometerTests.m */; };
 		D2E7B47D1C0CFF4000D44836 /* OdometerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E7B47C1C0CFF4000D44836 /* OdometerUITests.m */; };
+		D2E7B48B1C0D0C4500D44836 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2E7B48A1C0D0C4500D44836 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D2E7B4781C0CFF4000D44836 /* OdometerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OdometerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E7B47C1C0CFF4000D44836 /* OdometerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OdometerUITests.m; sourceTree = "<group>"; };
 		D2E7B47E1C0CFF4000D44836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2E7B48A1C0D0C4500D44836 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2E7B48B1C0D0C4500D44836 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 		D2E7B44B1C0CFF3F00D44836 = {
 			isa = PBXGroup;
 			children = (
+				D2E7B48A1C0D0C4500D44836 /* MapKit.framework */,
 				D2E7B4561C0CFF4000D44836 /* Odometer */,
 				D2E7B4701C0CFF4000D44836 /* OdometerTests */,
 				D2E7B47B1C0CFF4000D44836 /* OdometerUITests */,
@@ -207,6 +211,11 @@
 				TargetAttributes = {
 					D2E7B4531C0CFF4000D44836 = {
 						CreatedOnToolsVersion = 7.1.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					D2E7B46C1C0CFF4000D44836 = {
 						CreatedOnToolsVersion = 7.1.1;
