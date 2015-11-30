@@ -46,6 +46,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Odometer" id="lYH-bh-GSE">
+                        <barButtonItem key="leftBarButtonItem" title="Change Unit" id="3OJ-zp-JYB">
+                            <connections>
+                                <action selector="changeUnitButtonPressed:" destination="BYZ-38-t0r" id="Vll-Sn-q09"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Start" id="jJh-Iv-B5p">
                             <connections>
                                 <action selector="startStopButtonPressed:" destination="BYZ-38-t0r" id="eJD-k5-7fy"/>

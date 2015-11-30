@@ -17,6 +17,8 @@
 
 @property (strong, nonatomic) CLLocationManager *manager;
 @property (strong, nonatomic) CLLocation *previousLocation;
+@property (nonatomic, strong) NSArray *units;
+@property (nonatomic, strong) NSString *chosenUnit;
 
 @end
 
@@ -25,7 +27,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.distanceLabel.text = @"0.00";
-    // self.unitLabel.text = nil;
     
     // beg for location usage
     [self.manager requestAlwaysAuthorization];
@@ -43,6 +44,24 @@
         _manager.delegate = self;
     }
     return _manager;
+}
+
+- (NSArray *)units {
+    
+    if (!_units) {
+        _units = @[@"kilometers per hour",
+                   @"miles per hour",
+                   @"meters per second"];
+    }
+    return _units;
+}
+
+- (NSString *)chosenUnit {
+    
+    if (!_chosenUnit) {
+        _chosenUnit = [self.units objectAtIndex:0];
+    }
+    return _chosenUnit;
 }
 
 - (IBAction)startStopButtonPressed:(id)sender {
@@ -76,6 +95,38 @@
     [self.manager stopUpdatingLocation];
 }
 
+- (IBAction)changeUnitButtonPressed:(id)sender {
+    
+    // display a list of other units to measure speed
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:[self.units objectAtIndex:0] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.chosenUnit = [self.units objectAtIndex:0];
+        self.unitLabel.text = self.chosenUnit;
+    }];
+    
+    UIAlertAction *action2 = [UIAlertAction actionWithTitle:[self.units objectAtIndex:1] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.chosenUnit = [self.units objectAtIndex:1];
+        self.unitLabel.text = self.chosenUnit;
+    }];
+    
+    UIAlertAction *action3 = [UIAlertAction actionWithTitle:[self.units objectAtIndex:2] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.chosenUnit = [self.units objectAtIndex:2];
+        self.unitLabel.text = self.chosenUnit;
+    }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Never mind" style:UIAlertActionStyleDestructive handler:nil];
+    
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Change unit of measuring into..." message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [controller addAction:action1];
+    [controller addAction:action2];
+    [controller addAction:action3];
+    [controller addAction:cancel];
+    
+    [self presentViewController:controller animated:YES completion:^{
+        // do something on completion
+    }];
+    
+}
+
 #pragma mark - Location Manager Delegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
@@ -104,8 +155,8 @@
     // what's the distance between locations (in meters)?
     CLLocationDistance distance = [self.previousLocation distanceFromLocation:currentLocation];
     
-    // turn it into kilometers per hour
-    distance = distance * 3.6;
+    // turn it into chosen unit
+    distance = [self tweakDistance:distance];
     
     // update label
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
@@ -119,6 +170,25 @@
     // store current location as previous
     self.previousLocation = currentLocation;
     
+}
+
+- (CLLocationDistance)tweakDistance:(CLLocationDistance)currentDistance {
+    
+    // see what the user wants to see and re-calculate the distance
+    // we're receiving meters per second
+    
+    // kph
+    if ([self.chosenUnit isEqualToString:[self.units objectAtIndex:0]]) {
+        return currentDistance * 3.6;
+    }
+    
+    // mph
+    if ([self.chosenUnit isEqualToString:[self.units objectAtIndex:1]]) {
+        return currentDistance * 2.23694;
+    }
+    
+    // meters per second - return as is
+    return currentDistance;
 }
 
 @end
