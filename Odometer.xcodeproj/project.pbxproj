@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D2E7B4591C0CFF4000D44836 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E7B4581C0CFF4000D44836 /* main.m */; };
+		D2E7B45C1C0CFF4000D44836 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E7B45B1C0CFF4000D44836 /* AppDelegate.m */; };
+		D2E7B45F1C0CFF4000D44836 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E7B45E1C0CFF4000D44836 /* ViewController.m */; };
+		D2E7B4621C0CFF4000D44836 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E7B4601C0CFF4000D44836 /* Main.storyboard */; };
+		D2E7B4641C0CFF4000D44836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E7B4631C0CFF4000D44836 /* Assets.xcassets */; };
+		D2E7B4671C0CFF4000D44836 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E7B4651C0CFF4000D44836 /* LaunchScreen.storyboard */; };
+		D2E7B4721C0CFF4000D44836 /* OdometerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E7B4711C0CFF4000D44836 /* OdometerTests.m */; };
+		D2E7B47D1C0CFF4000D44836 /* OdometerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E7B47C1C0CFF4000D44836 /* OdometerUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D2E7B46E1C0CFF4000D44836 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2E7B44C1C0CFF3F00D44836 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2E7B4531C0CFF4000D44836;
+			remoteInfo = Odometer;
+		};
+		D2E7B4791C0CFF4000D44836 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2E7B44C1C0CFF3F00D44836 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2E7B4531C0CFF4000D44836;
+			remoteInfo = Odometer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D2E7B4541C0CFF4000D44836 /* Odometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Odometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2E7B4581C0CFF4000D44836 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D2E7B45A1C0CFF4000D44836 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D2E7B45B1C0CFF4000D44836 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D2E7B45D1C0CFF4000D44836 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D2E7B45E1C0CFF4000D44836 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D2E7B4611C0CFF4000D44836 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D2E7B4631C0CFF4000D44836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D2E7B4661C0CFF4000D44836 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D2E7B4681C0CFF4000D44836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2E7B46D1C0CFF4000D44836 /* OdometerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OdometerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2E7B4711C0CFF4000D44836 /* OdometerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OdometerTests.m; sourceTree = "<group>"; };
+		D2E7B4731C0CFF4000D44836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2E7B4781C0CFF4000D44836 /* OdometerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OdometerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2E7B47C1C0CFF4000D44836 /* OdometerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OdometerUITests.m; sourceTree = "<group>"; };
+		D2E7B47E1C0CFF4000D44836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2E7B4511C0CFF4000D44836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2E7B46A1C0CFF4000D44836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2E7B4751C0CFF4000D44836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D2E7B44B1C0CFF3F00D44836 = {
+			isa = PBXGroup;
+			children = (
+				D2E7B4561C0CFF4000D44836 /* Odometer */,
+				D2E7B4701C0CFF4000D44836 /* OdometerTests */,
+				D2E7B47B1C0CFF4000D44836 /* OdometerUITests */,
+				D2E7B4551C0CFF4000D44836 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D2E7B4551C0CFF4000D44836 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2E7B4541C0CFF4000D44836 /* Odometer.app */,
+				D2E7B46D1C0CFF4000D44836 /* OdometerTests.xctest */,
+				D2E7B4781C0CFF4000D44836 /* OdometerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D2E7B4561C0CFF4000D44836 /* Odometer */ = {
+			isa = PBXGroup;
+			children = (
+				D2E7B45A1C0CFF4000D44836 /* AppDelegate.h */,
+				D2E7B45B1C0CFF4000D44836 /* AppDelegate.m */,
+				D2E7B45D1C0CFF4000D44836 /* ViewController.h */,
+				D2E7B45E1C0CFF4000D44836 /* ViewController.m */,
+				D2E7B4601C0CFF4000D44836 /* Main.storyboard */,
+				D2E7B4631C0CFF4000D44836 /* Assets.xcassets */,
+				D2E7B4651C0CFF4000D44836 /* LaunchScreen.storyboard */,
+				D2E7B4681C0CFF4000D44836 /* Info.plist */,
+				D2E7B4571C0CFF4000D44836 /* Supporting Files */,
+			);
+			path = Odometer;
+			sourceTree = "<group>";
+		};
+		D2E7B4571C0CFF4000D44836 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2E7B4581C0CFF4000D44836 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2E7B4701C0CFF4000D44836 /* OdometerTests */ = {
+			isa = PBXGroup;
+			children = (
+				D2E7B4711C0CFF4000D44836 /* OdometerTests.m */,
+				D2E7B4731C0CFF4000D44836 /* Info.plist */,
+			);
+			path = OdometerTests;
+			sourceTree = "<group>";
+		};
+		D2E7B47B1C0CFF4000D44836 /* OdometerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D2E7B47C1C0CFF4000D44836 /* OdometerUITests.m */,
+				D2E7B47E1C0CFF4000D44836 /* Info.plist */,
+			);
+			path = OdometerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D2E7B4531C0CFF4000D44836 /* Odometer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2E7B4811C0CFF4000D44836 /* Build configuration list for PBXNativeTarget "Odometer" */;
+			buildPhases = (
+				D2E7B4501C0CFF4000D44836 /* Sources */,
+				D2E7B4511C0CFF4000D44836 /* Frameworks */,
+				D2E7B4521C0CFF4000D44836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Odometer;
+			productName = Odometer;
+			productReference = D2E7B4541C0CFF4000D44836 /* Odometer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D2E7B46C1C0CFF4000D44836 /* OdometerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2E7B4841C0CFF4000D44836 /* Build configuration list for PBXNativeTarget "OdometerTests" */;
+			buildPhases = (
+				D2E7B4691C0CFF4000D44836 /* Sources */,
+				D2E7B46A1C0CFF4000D44836 /* Frameworks */,
+				D2E7B46B1C0CFF4000D44836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2E7B46F1C0CFF4000D44836 /* PBXTargetDependency */,
+			);
+			name = OdometerTests;
+			productName = OdometerTests;
+			productReference = D2E7B46D1C0CFF4000D44836 /* OdometerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D2E7B4771C0CFF4000D44836 /* OdometerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2E7B4871C0CFF4000D44836 /* Build configuration list for PBXNativeTarget "OdometerUITests" */;
+			buildPhases = (
+				D2E7B4741C0CFF4000D44836 /* Sources */,
+				D2E7B4751C0CFF4000D44836 /* Frameworks */,
+				D2E7B4761C0CFF4000D44836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2E7B47A1C0CFF4000D44836 /* PBXTargetDependency */,
+			);
+			name = OdometerUITests;
+			productName = OdometerUITests;
+			productReference = D2E7B4781C0CFF4000D44836 /* OdometerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D2E7B44C1C0CFF3F00D44836 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Pinkstone Pictures LLC";
+				TargetAttributes = {
+					D2E7B4531C0CFF4000D44836 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					D2E7B46C1C0CFF4000D44836 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = D2E7B4531C0CFF4000D44836;
+					};
+					D2E7B4771C0CFF4000D44836 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = D2E7B4531C0CFF4000D44836;
+					};
+				};
+			};
+			buildConfigurationList = D2E7B44F1C0CFF3F00D44836 /* Build configuration list for PBXProject "Odometer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D2E7B44B1C0CFF3F00D44836;
+			productRefGroup = D2E7B4551C0CFF4000D44836 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2E7B4531C0CFF4000D44836 /* Odometer */,
+				D2E7B46C1C0CFF4000D44836 /* OdometerTests */,
+				D2E7B4771C0CFF4000D44836 /* OdometerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D2E7B4521C0CFF4000D44836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2E7B4671C0CFF4000D44836 /* LaunchScreen.storyboard in Resources */,
+				D2E7B4641C0CFF4000D44836 /* Assets.xcassets in Resources */,
+				D2E7B4621C0CFF4000D44836 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2E7B46B1C0CFF4000D44836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2E7B4761C0CFF4000D44836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2E7B4501C0CFF4000D44836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2E7B45F1C0CFF4000D44836 /* ViewController.m in Sources */,
+				D2E7B45C1C0CFF4000D44836 /* AppDelegate.m in Sources */,
+				D2E7B4591C0CFF4000D44836 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2E7B4691C0CFF4000D44836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2E7B4721C0CFF4000D44836 /* OdometerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2E7B4741C0CFF4000D44836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2E7B47D1C0CFF4000D44836 /* OdometerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D2E7B46F1C0CFF4000D44836 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2E7B4531C0CFF4000D44836 /* Odometer */;
+			targetProxy = D2E7B46E1C0CFF4000D44836 /* PBXContainerItemProxy */;
+		};
+		D2E7B47A1C0CFF4000D44836 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2E7B4531C0CFF4000D44836 /* Odometer */;
+			targetProxy = D2E7B4791C0CFF4000D44836 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D2E7B4601C0CFF4000D44836 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2E7B4611C0CFF4000D44836 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D2E7B4651C0CFF4000D44836 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2E7B4661C0CFF4000D44836 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D2E7B47F1C0CFF4000D44836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D2E7B4801C0CFF4000D44836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D2E7B4821C0CFF4000D44836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Odometer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.versluis.Odometer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D2E7B4831C0CFF4000D44836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Odometer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.versluis.Odometer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D2E7B4851C0CFF4000D44836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OdometerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.versluis.OdometerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Odometer.app/Odometer";
+			};
+			name = Debug;
+		};
+		D2E7B4861C0CFF4000D44836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OdometerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.versluis.OdometerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Odometer.app/Odometer";
+			};
+			name = Release;
+		};
+		D2E7B4881C0CFF4000D44836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OdometerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.versluis.OdometerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Odometer;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		D2E7B4891C0CFF4000D44836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OdometerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.versluis.OdometerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Odometer;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D2E7B44F1C0CFF3F00D44836 /* Build configuration list for PBXProject "Odometer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2E7B47F1C0CFF4000D44836 /* Debug */,
+				D2E7B4801C0CFF4000D44836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2E7B4811C0CFF4000D44836 /* Build configuration list for PBXNativeTarget "Odometer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2E7B4821C0CFF4000D44836 /* Debug */,
+				D2E7B4831C0CFF4000D44836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D2E7B4841C0CFF4000D44836 /* Build configuration list for PBXNativeTarget "OdometerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2E7B4851C0CFF4000D44836 /* Debug */,
+				D2E7B4861C0CFF4000D44836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D2E7B4871C0CFF4000D44836 /* Build configuration list for PBXNativeTarget "OdometerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2E7B4881C0CFF4000D44836 /* Debug */,
+				D2E7B4891C0CFF4000D44836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D2E7B44C1C0CFF3F00D44836 /* Project object */;
+}
