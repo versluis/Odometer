@@ -14,11 +14,15 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *unitLabel;
+@property (strong, nonatomic) IBOutlet UILabel *totalDistanceLabel;
 
 @property (strong, nonatomic) CLLocationManager *manager;
 @property (strong, nonatomic) CLLocation *previousLocation;
+@property CLLocationDistance totalDistance;
+
 @property (nonatomic, strong) NSArray *units;
 @property (nonatomic, strong) NSString *chosenUnit;
+
 
 @end
 
@@ -27,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.distanceLabel.text = @"0.00";
+    self.totalDistanceLabel.text = @"0.00 km";
     
     // beg for location usage
     [self.manager requestAlwaysAuthorization];
@@ -64,6 +69,8 @@
     return _chosenUnit;
 }
 
+#pragma mark - UI Elements
+
 - (IBAction)startStopButtonPressed:(id)sender {
     
     // let's toggle this guy
@@ -100,17 +107,17 @@
     // display a list of other units to measure speed
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:[self.units objectAtIndex:0] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         self.chosenUnit = [self.units objectAtIndex:0];
-        self.unitLabel.text = self.chosenUnit;
+        [self refreshLabels];
     }];
     
     UIAlertAction *action2 = [UIAlertAction actionWithTitle:[self.units objectAtIndex:1] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         self.chosenUnit = [self.units objectAtIndex:1];
-        self.unitLabel.text = self.chosenUnit;
+        [self refreshLabels];
     }];
     
     UIAlertAction *action3 = [UIAlertAction actionWithTitle:[self.units objectAtIndex:2] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         self.chosenUnit = [self.units objectAtIndex:2];
-        self.unitLabel.text = self.chosenUnit;
+        [self refreshLabels];
     }];
     
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Never mind" style:UIAlertActionStyleCancel handler:nil];
@@ -127,11 +134,19 @@
     
 }
 
+- (void)refreshLabels {
+    
+    // called after updating the unit of measure
+    self.unitLabel.text = self.chosenUnit;
+    [self updateTotalDistanceLabel];
+}
+
 #pragma mark - Location Manager Delegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     
     NSLog(@"Location Update received...");
+    [self addToTotalDistance:locations.lastObject];
     [self calculateDistanceForLocation:locations.lastObject];
 }
 
@@ -140,6 +155,8 @@
     NSLog(@"Nothing works - like always!");
     NSLog(@"Description: %@\nReason: %@", error.localizedDescription, error.localizedFailureReason);
 }
+
+#pragma mark - Distacne Calculations
 
 - (void)calculateDistanceForLocation:(CLLocation *)currentLocation {
     
@@ -189,6 +206,43 @@
     
     // meters per second - return as is
     return currentDistance;
+}
+
+- (void)addToTotalDistance:(CLLocation *)currentLocation {
+    
+    self.totalDistance = self.totalDistance + [currentLocation distanceFromLocation:self.previousLocation];
+    [self updateTotalDistanceLabel];
+}
+
+- (void)updateTotalDistanceLabel {
+    
+    // the distance is in meters - tweak depending on what's selected
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
+    formatter.minimumIntegerDigits = 1;
+    formatter.minimumFractionDigits = 2;
+    formatter.maximumFractionDigits = 2;
+    NSString *distanceText = nil;
+    
+    // kph
+    if ([self.chosenUnit isEqualToString:[self.units objectAtIndex:0]]) {
+        CLLocationDistance distance = self.totalDistance / 1000;
+        distanceText = [NSString stringWithFormat:@"%@ km", [formatter stringFromNumber:[NSNumber numberWithFloat:distance]]];
+    }
+    
+    // mph
+    if ([self.chosenUnit isEqualToString:[self.units objectAtIndex:1]]) {
+        CLLocationDistance distance = self.totalDistance * 0.000621371;
+        distanceText = [NSString stringWithFormat:@"%@ mi", [formatter stringFromNumber:[NSNumber numberWithFloat:distance]]];
+    }
+    
+    // meters per second - return as is
+    if ([self.chosenUnit isEqualToString:[self.units objectAtIndex:2]]) {
+        distanceText = [NSString stringWithFormat:@"%@ m", [formatter stringFromNumber:[NSNumber numberWithFloat:self.totalDistance]]];
+    }
+    
+    // and update the label
+    self.totalDistanceLabel.text = distanceText;
+    
 }
 
 @end
