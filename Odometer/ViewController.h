@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@import CoreLocation;
 
 @interface ViewController : UIViewController
 
+@property CLLocationDistance totalDistance;
+@property float currentSpeed;
 
 @end
 

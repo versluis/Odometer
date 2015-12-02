@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-@import CoreLocation;
 
 @interface ViewController () <CLLocationManagerDelegate>
 
@@ -18,7 +17,6 @@
 
 @property (strong, nonatomic) CLLocationManager *manager;
 @property (strong, nonatomic) CLLocation *previousLocation;
-@property CLLocationDistance totalDistance;
 
 @property (nonatomic, strong) NSArray *units;
 @property (nonatomic, strong) NSString *chosenUnit;
@@ -30,10 +28,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.distanceLabel.text = @"0.00";
-    self.totalDistanceLabel.text = @"0.00 km";
+//    self.distanceLabel.text = @"0.00";
+//    self.totalDistanceLabel.text = @"0.00 km";
+
+    [self refreshLabels];
     
-    // beg for location usage
+    // beg user for location usage allowance
     [self.manager requestAlwaysAuthorization];
 }
 
@@ -68,6 +68,7 @@
     }
     return _chosenUnit;
 }
+
 
 #pragma mark - UI Elements
 
@@ -139,6 +140,7 @@
     // called after updating the unit of measure
     self.unitLabel.text = self.chosenUnit;
     [self updateTotalDistanceLabel];
+    [self updateSpeedLabel];
 }
 
 #pragma mark - Location Manager Delegate
@@ -173,16 +175,10 @@
     CLLocationDistance distance = [self.previousLocation distanceFromLocation:currentLocation];
     
     // turn it into chosen unit
-    distance = [self tweakDistance:distance];
+    self.currentSpeed = (float)[self tweakDistance:distance];
     
     // update label
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
-    formatter.minimumFractionDigits = 2;
-    formatter.maximumFractionDigits = 2;
-    formatter.minimumIntegerDigits = 1;
-    
-    NSString *distanceText = [formatter stringFromNumber:[NSNumber numberWithFloat:distance]];
-    self.distanceLabel.text = distanceText;
+    [self updateSpeedLabel];
     
     // store current location as previous
     self.previousLocation = currentLocation;
@@ -243,6 +239,18 @@
     // and update the label
     self.totalDistanceLabel.text = distanceText;
     
+}
+
+- (void)updateSpeedLabel {
+    
+    // update label
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
+    formatter.minimumFractionDigits = 2;
+    formatter.maximumFractionDigits = 2;
+    formatter.minimumIntegerDigits = 1;
+    
+    NSString *distanceText = [formatter stringFromNumber:[NSNumber numberWithFloat:self.currentSpeed]];
+    self.distanceLabel.text = distanceText;
 }
 
 @end
